@@ -1,0 +1,8 @@
+title: Whatsitlikebeing
+description: What's it like being? Blog & posts to explore experiences.
+google_analytics: UA-46300235-6
+show_downloads: true
+theme: jekyll-theme-minimal
+
+gems:
+  - jekyll-mentions
