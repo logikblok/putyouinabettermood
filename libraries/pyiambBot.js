@@ -55,6 +55,31 @@ var kittens = function () {
 });
 };
 
+var puppies = function () {
+  pyiamBot.message.add({
+    delay: 1000,
+    content:'Here is a puppy![puppy](https://66.media.tumblr.com/62767a0bb6d999f8b52fc0aa78b50534/tumblr_phltx2skCk1t2ph9to1_400.jpg)'
+}).then(function(){
+    return pyiamBot.action.button({
+      delay:4250,
+      action: [{
+        text:"More puppies 🐶",
+        value:"yespuppies"
+      }, {
+        text:"No thanks",
+        value:"end"
+      }]
+  });
+}).then(function (res){
+  if(res.value == 'yespuppies'){
+    puppies();
+  }
+  if(res.value == 'no more puppies'){
+  end();
+}
+});
+};
+
 var end = function () {
   pyiamBot.message.add({
     delay: 1000,
