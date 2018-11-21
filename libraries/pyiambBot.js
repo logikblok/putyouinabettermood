@@ -63,18 +63,18 @@ var puppies = function () {
     return pyiamBot.action.button({
       delay:4250,
       action: [{
-        text:"More puppies 🐶",
-        value:"yespuppies"
+        text: "More puppies 🐶",
+        value: "yespuppies"
       }, {
-        text:"No thanks",
-        value:"end"
+        text: "No thanks",
+        value: "end"
       }]
   });
 }).then(function (res){
   if(res.value == 'yespuppies'){
     puppies();
   }
-  if(res.value == 'no more puppies'){
+  if(res.value == 'end'){
   end();
 }
 });
@@ -83,6 +83,6 @@ var puppies = function () {
 var end = function () {
   pyiamBot.message.add({
     delay: 1000,
-    content: 'Thanks for coming. This was created with [Bot UI](https:///docs.botui.org), you can see more cuteness on [Put you in a better mood.com](http://www.putyouinabettermood.com/)'
+    content: "Thanks for coming. I'm created using [Bot UI](https:///docs.botui.org), you can see more cuteness on [Put you in a better mood.com](http://www.putyouinabettermood.com/)"
   });
 };
