@@ -1,21 +1,28 @@
 var pyiamBot = new BotUI('Better-Mood-Bot');
 
 pyiamBot.message.bot({
-  content: "Hello there! I'm the Put you in a better mood bot"
+  content: "Hello there! I'm the Put you in a better mood bot 😊"
 }).then(function () { // wait till previous message has been shown.
-
-  pyiamBot.message.human({
-    delay: 100,
-    content: 'Hello World from human!'
+  pyiamBot.message.bot({
+    delay: 1000,
+    content: 'What would you like to see today?'
   });
 }).then(function(){
-    pyiamBot.message.bot({
-      delay:200,
-      content: "How are you doing today?"
-}).then(function () {
-    pyiamBot.message.human({
-      delay: 300,
-      content: "I feel good"
-    });
+    return pyiamBot.action.button({
+      delay:2250,
+      action: [{
+        text:"Kittens!🐱",
+        value:"kittens"
+      }, {
+        text:"Puppies!🐶",
+        value:"puppies"
+      }]
   });
+}).then(function (res){
+  if(res.value == 'kittens'){
+    kittens();
+  }
+  if(res.value == 'puppies'){
+  puppies();
+}
 });
