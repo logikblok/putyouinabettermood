@@ -23,7 +23,7 @@ pyiamBot.message.bot({
     kittens();
   }
   if(res.value == 'puppies'){
-  puppies();
+    puppies();
 }
 });
 
